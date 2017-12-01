@@ -32,6 +32,7 @@ gulp.task('browserify', () => {
 
 gulp.task('serve', () => {
   gulp.watch( 'index.html',  [ 'build' ] );
+  gulp.watch( sourcePaths.js,  [ 'build' ] );
 })
 
 gulp.task('build', ['scripts', 'vendorjs', 'images', 'files', 'arjs']);
