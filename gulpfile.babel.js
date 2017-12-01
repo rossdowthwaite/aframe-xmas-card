@@ -31,10 +31,10 @@ gulp.task('browserify', () => {
 });
 
 gulp.task('serve', () => {
-  gulp.watch( sourcePaths.js,  [ 'browserify' ] );
+  gulp.watch( 'index.html',  [ 'build' ] );
 })
 
-gulp.task('build', ['scripts', 'vendorjs', 'images', 'files']);
+gulp.task('build', ['scripts', 'vendorjs', 'images', 'files', 'arjs']);
 
 gulp.task('scripts', () => {
   return gulp.src( ['./assets/scripts/*.js'])
@@ -45,6 +45,12 @@ gulp.task('scripts', () => {
 gulp.task('vendorjs', () => {
   return gulp.src( ['node_modules/aframe/dist/aframe.js'])
     .pipe( concat( 'vendor.js' ) )
+    .pipe( gulp.dest( destPaths.js ) )
+})
+
+gulp.task('arjs', () => {
+  return gulp.src( ['./assets/scripts/ar/*.js'])
+    .pipe( concat( 'ar.js' ) )
     .pipe( gulp.dest( destPaths.js ) )
 })
 

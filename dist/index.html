@@ -7,21 +7,25 @@
 
     <script src="assets/scripts/vendor.js"></script>
     <script src="assets/scripts/scripts.js"></script>
-    <!--  -->
+    <script src="assets/scripts/ar.js"></script>
+
   </head>
   <body>
 
-      <!-- embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" -->
-      <a-scene>
+      <a-scene embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" camera-position="1">
         <!-- position="0 2.840 9.247"  rotation="-24.544 0 0" -->
-        <a-entity position="0 2.840 9.247"  rotation="-24.544 0 0">
+        <!-- <a-entity position="0 2.840 9.247"  rotation="-24.544 0 0">
           <a-camera for="60"></a-camera>
-        </a-entity>
+        </a-entity> -->
 
-        <!-- <a-marker preset="hiro"> -->
+        <a-marker-camera id="camera" preset="custom" url="pattern-marker.patt"></a-marker-camera>
 
-          <a-entity  id="xmas-scene" position="0 0 0"  rotation="0 40 0"  scale="0.3 0.3 0.3">
+          <!-- rotation="0 40 0" -->
+          <a-entity  id="xmas-scene" position="0 1 0"  rotation="0 40 0"  scale="0.15 0.15 0.15">
 
+            <a-sphere id="snow-ball" color="white" opacity="0.8"></a-sphere>
+
+            <a-entity id="snow-balls" snow="amount: 5; speed: 0.05"></a-entity>
 
             <!-- Present -->
             <a-entity id="presents" position="7.365 0.788 3.042"  rotation="-3.100 -104.560 0">
@@ -29,9 +33,6 @@
               <a-entity id="present-1" position="0 0 0"  scale="0.7 0.7 0.7" animation__scale="property: scale; dir: alternate; dur: 200;
                                easing: easeInSine; loop: true; to: 0.72 0.72 0.72">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0"  src="assets/img/UnitWrapping5.png"></a-box>
-
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#A15DBD"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#A15DBD"></a-box> -->
 
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
 
@@ -43,8 +44,6 @@
                                easing: easeInSine; loop: true; to: 0.52 0.52 0.52">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" color="#A15DBD" src="assets/img/UnitWrapping3.png"></a-box>
 
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#27CEC8"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#27CEC8"></a-box> -->
 
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
               </a-entity>
@@ -53,8 +52,6 @@
                                easing: easeInSine; loop: true; to: 0.22 0.22 0.22">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" color="#5BA7E1"></a-box>
 
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#27CEC8"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#27CEC8"></a-box> -->
 
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
               </a-entity>
@@ -63,18 +60,12 @@
                                easing: easeInSine; loop: true; to: 0.42 0.42 0.42">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" color="#27CEC8" src="assets/img/UnitWrapping5.png"></a-box>
 
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#A15DBD"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#A15DBD"></a-box> -->
-
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
               </a-entity>
 
-              <a-entity id="present-5" position="2.740 -0.256 1.600"  scale="0.35 0.35 0.35"  rotation="20 0 20" animation__scale="property: scale; dir: alternate; dur: 100;
+              <a-entity id="present-5" position="2.740 -0.256 1.600"  scale="0.35 0.35 0.35"  rotation="20 0 20" animation__scale="property: scale; dir: alternate; dur: 250;
                                easing: easeInSine; loop: true; to: 0.37 0.37 0.37">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" src="assets/img/UnitWrapping3.png"></a-box>
-
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#27CEC8"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#27CEC8"></a-box> -->
 
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
               </a-entity>
@@ -83,8 +74,6 @@
                                easing: easeInSine; loop: true; to: 0.22 0.22 0.22">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" color="#27CEC8" src="assets/img/UnitWrapping5.png"></a-box>
 
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#A15DBD"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#A15DBD"></a-box> -->
 
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
               </a-entity>
@@ -93,18 +82,13 @@
                                easing: easeInSine; loop: true; to: 0.19 0.19 0.19">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" src="assets/img/UnitWrapping1.png"></a-box>
 
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#27CEC8"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#27CEC8"></a-box> -->
 
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
               </a-entity>
 
-              <a-entity id="present-8" position="4.477 -0.189 -0.116"  scale="0.17 0.17 0.17"  rotation="20 0 -20" animation__scale="property: scale; dir: alternate; dur: 200;
+              <a-entity id="present-8" position="4.244 -0.284 1.642"  scale="0.17 0.17 0.17"  rotation="20 0 -20" animation__scale="property: scale; dir: alternate; dur: 200;
                                easing: easeInSine; loop: true; to: 0.19 0.19 0.19">
                 <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" src="assets/img/UnitWrapping1.png"></a-box>
-
-                <!-- <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 0 0" color="#27CEC8"></a-box>
-                <a-box position="0 2 0" scale="1.210 4.030 4.070" rotation="0 90 0" color="#27CEC8"></a-box> -->
 
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
               </a-entity>
@@ -114,59 +98,86 @@
 
                 <a-cylinder position="0 0 0" height="4" color="#27CEC8" src="assets/img/UnitWrapping5.png" radius="1"></a-cylinder>
 
-                <!-- <a-box position="0 0 0" scale="0.7 4.030 2.02" rotation="0 0 0" color="#A15DBD"></a-box>
-                <a-box position="0 0 0" scale="0.7 4.030 2.02" rotation="0 90 0" color="#A15DBD"></a-box> -->
-
                 <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.240" radius-tubular="0.070"  rotation="90 0 0" position="-0.026 2.049 -0.014"></a-torus-knot>
               </a-entity>
 
             </a-entity>
 
-            <a-entity id="xmas-tree" position="4.259 0 -3.900" scale="1.4 1.4 1.4" rotation="0 -55 0">
+            <a-entity id="present-10" position="1.606 0.287 10.344"  scale="0.3 0.3 0.3"  rotation="0 0 0" animation__scale="property: scale; dir: alternate; dur: 200;
+                             easing: easeInSine; loop: true; to: 0.28 0.33 0.28">
+              <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" src="assets/img/UnitWrapping3.png"></a-box>
+
+              <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
+            </a-entity>
+
+            <a-entity id="present-11" position="0.360 0.337 10"  scale="0.16 0.16 0.16"  rotation="0 0 0" animation__scale="property: scale; dir: alternate; dur: 200;
+                             easing: easeInSine; loop: true; to: 0.15 0.17 0.15">
+              <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" src="assets/img/UnitWrapping5.png"></a-box>
+
+              <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
+            </a-entity>
+
+            <a-entity id="present-12" position="-10.485 0.294 1.110"  scale="0.25 0.25 0.25"  rotation="0 0 0" animation__scale="property: scale; dir: alternate; dur: 200;
+                             easing: easeInSine; loop: true; to: 0.23 0.29 0.23">
+              <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" color="#27CEC8" src="assets/img/UnitWrapping5.png"></a-box>
+
+              <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
+            </a-entity>
+
+            <a-entity id="present-13" position="-10.085 0.337 2.187"  scale="0.16 0.16 0.16"  rotation="0 0 0" animation__scale="property: scale; dir: alternate; dur: 200;
+                             easing: easeInSine; loop: true; to: 0.15 0.25 0.15">
+              <a-box position="0 2 0" scale="4 4 4" rotation="0 0 0" color="#A15DBD" src="assets/img/UnitWrapping3.png"></a-box>
+
+              <a-torus-knot color="#D71257" arc="180" p="2" q="7" metalness="0.4" radius="0.42" radius-tubular="0.15"  rotation="90 0 0" position="0 4.2 0"></a-torus-knot>
+            </a-entity>
+
+
+            <!--  Xmas Tree position="4.259 0 -3.900" -->
+            <a-entity id="xmas-tree" rotate="-0.5" position="4.259 0 -3.900" scale="1.4 1.4 1.4" rotation="0 -55 0">
 
               <a-entity id="xmas-tree-leaves" position="0 0.7 0" scale="1 1 1">
 
                 <a-entity id="xmas-tree-section-1" scale="1 1 1">
-                  <a-cone id="xmas-tree-cone-1" position="0 1.76 0" height="1.36" color="#145A03" radius-bottom="2.89" radius-top="1.03"></a-cone>
-                  <a-torus id="tinsel-1" color="#A15DBD" arc="360" radius="2.2" radius-tubular="0.05"  rotation="90 0 0"  position="0 1.608 0"></a-torus>
+                  <a-cone id="xmas-tree-cone-1" position="0 1.76 0" height="1.36" color="#145A03" radius-bottom="2.89" radius-top="1.03"  scale="0.9 0.9 0.9"></a-cone>
+                  <a-torus id="tinsel-1" metalness="0.7" color="#A15DBD" arc="360" radius="2.2" radius-tubular="0.05"  rotation="90 0 0"  position="0 1.608 0"></a-torus>
                   <a-torus id="xmas-snow-1" color="white" arc="360" radius="2.8" radius-tubular="0.10"  rotation="90 0 0"  position="0 1.163 0"></a-torus>
 
                   <a-entity id='baubles-row-1'>
                     <a-entity id="baubles-row-1a" scale="1 1 1">
-                      <a-sphere color="#D71257" radius="0.3" position="0.739 0.801 2.758" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="-0.739 0.801 -2.758" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="-2.792 0.801 0.748" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="2.792 0.801 -0.741" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="0.739 0.801 2.758" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="-0.739 0.801 -2.758" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="-2.792 0.801 0.748" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="2.792 0.801 -0.741" metalness="0.3"></a-sphere>
                     </a-entity>
 
                     <a-entity id="baubles-row-1b" scale="1 1 1" rotation="0 45 0">
-                      <a-sphere color="#27CEC8" radius="0.3" position="0.739 0.801 2.758"metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="-0.739 0.801 -2.758"metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="-2.792 0.801 0.748"metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="2.792 0.801 -0.741"metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="0.739 0.801 2.758"metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="-0.739 0.801 -2.758"metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="-2.792 0.801 0.748"metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="2.792 0.801 -0.741"metalness="0.3"></a-sphere>
                     </a-entity>
                   </a-entity>
                 </a-entity>
 
                 <a-entity id="xmas-tree-section-2" scale="1 1 1">
 
-                  <a-cone id="xmas-tree-cone-2" position="0 2.8 0" height="1.1" color="#145A03" radius-bottom="2" radius-top="0.85"></a-cone>
-                  <a-torus id="tinsel-2" color="#D71257" arc="360" radius="1.5" radius-tubular="0.05"  rotation="90 0 0"  position="0 2.790 0"></a-torus>
+                  <a-cone id="xmas-tree-cone-2" position="0 2.8 0" height="1.1" color="#145A03" radius-bottom="2" radius-top="0.85"   scale="0.9 0.9 0.9"></a-cone>
+                  <a-torus id="tinsel-2" metalness="0.3" color="#27CEC8" arc="360" radius="1.5" radius-tubular="0.05"  rotation="90 0 0"  position="0 2.790 0"></a-torus>
                   <a-torus id="xmas-snow-2" color="white" arc="360" radius="1.85" radius-tubular="0.10"  rotation="90 0 0"  position="0 2.300 0"></a-torus>
 
                   <a-entity id='baubles-row-2' position="0 2.149 0">
                     <a-entity id="baubles-row-2a" scale="1 1 1">
-                      <a-sphere color="#27CEC8" radius="0.3" position="0.530 0 1.976" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="-0.530 0 -1.976" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="-1.929 0 0.510" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="1.929 0 -0.510" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="0.530 0 1.976" metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="-0.530 0 -1.976" metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="-1.929 0 0.510" metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="1.929 0 -0.510" metalness="0.3"></a-sphere>
                     </a-entity>
 
                     <a-entity id="baubles-row-2b" scale="1 1 1" rotation="0 45 0">
-                      <a-sphere color="#D71257" radius="0.3" position="0.530 0 1.976" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="-0.530 0 -1.976" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="-1.929 0 0.510" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="1.929 0 -0.510" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="0.530 0 1.976" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="-0.530 0 -1.976" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="-1.929 0 0.510" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="1.929 0 -0.510" metalness="0.3"></a-sphere>
                     </a-entity>
                   </a-entity>
 
@@ -174,22 +185,22 @@
 
                 <a-entity id="xmas-tree-section-3" scale="1 1 1" position="0 0.173 0">
 
-                  <a-cone id="xmas-tree-cone-3" position="0 3.8 0" height="1.1" color="#145A03" radius-bottom="1.5" radius-top="0.5"></a-cone>
-                  <a-torus id="tinsel-3" color="#A15DBD" arc="360" radius="1.07" radius-tubular="0.05"  rotation="90 0 0"  position="0 3.740 0"></a-torus>
+                  <a-cone id="xmas-tree-cone-3" position="0 3.8 0" height="1.1" color="#145A03" radius-bottom="1.5" radius-top="0.5" scale="0.9 0.9 0.9"></a-cone>
+                  <a-torus id="tinsel-3" metalness="0.3" color="#A15DBD" arc="360" radius="1.07" radius-tubular="0.05"  rotation="90 0 0"  position="0 3.740 0"></a-torus>
                   <a-torus id="xmas-snow-3" color="white" arc="360" radius="1.35" radius-tubular="0.10"  rotation="90 0 0"  position="0 3.31 0"></a-torus>
 
                   <a-entity id='baubles-row-3' position="0 3.132 0">
                     <a-entity id="baubles-row-3a" scale="1 1 1">
-                      <a-sphere color="#D71257" radius="0.3" position="0.382 0 1.423" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="-0.382 0 -1.423" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="-1.440 0 0.379" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                      <a-sphere color="#D71257" radius="0.3" position="1.440 0 -0.379" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="0.382 0 1.423" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="-0.382 0 -1.423" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="-1.440 0 0.379" metalness="0.3"></a-sphere>
+                      <a-sphere color="#A15DBD" radius="0.3" position="1.440 0 -0.379" metalness="0.3"></a-sphere>
                     </a-entity>
                     <a-entity id="baubles-row-3b" scale="1 1 1" rotation="0 45 0">
-                      <a-sphere color="#27CEC8" radius="0.3" position="0.382 0 1.423" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="-0.382 0 -1.423" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="-1.440 0 0.379" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                      <a-sphere color="#27CEC8" radius="0.3" position="1.440 0 -0.379" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="0.382 0 1.423" metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="-0.382 0 -1.423" metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="-1.440 0 0.379" metalness="0.3"></a-sphere>
+                      <a-sphere color="#27CEC8" radius="0.3" position="1.440 0 -0.379" metalness="0.3"></a-sphere>
                     </a-entity>
                   </a-entity>
 
@@ -197,289 +208,330 @@
 
                 <a-entity scale="1 1 1" id="xmas-tree-section-4" position="0 0.332 0">
 
-                  <a-cone id="xmas-tree-cone-4" position="0 4.9 0" height="1.47" color="#145A03" radius-bottom="1.1" radius-top="0" ></a-cone>
-                  <a-torus id="tinsel-4" color="#D71257" arc="360" radius="0.81" radius-tubular="0.05"  rotation="90 0 0"  position="0 4.638 0"></a-torus>
+                  <a-cone id="xmas-tree-cone-4" position="0 4.9 0" height="1.47" color="#145A03" radius-bottom="1.1" radius-top="0" scale="0.9 0.9 0.9"></a-cone>
+                  <a-torus id="tinsel-4" metalness="0.3" color="#27CEC8" arc="360" radius="0.81" radius-tubular="0.05"  rotation="90 0 0"  position="0 4.638 0"></a-torus>
                   <a-torus id="xmas-snow-4" color="white" arc="360" radius="0.95" radius-tubular="0.10"  rotation="90 0 0"  position="0 4.210 0"></a-torus>
 
                   <a-entity id='baubles-row-4' position="0 4.040 0">
-                    <a-sphere color="#27CEC8" radius="0.3" position="0.277 0 1.031" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                    <a-sphere color="#27CEC8" radius="0.3" position="-0.277 0 -1.031" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                    <a-sphere color="#D71257" radius="0.3" position="-1.048 0 0.274" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                    <a-sphere color="#D71257" radius="0.3" position="1.048 0 -0.274" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
+                    <a-sphere color="#27CEC8" radius="0.3" position="0.277 0 1.031" metalness="0.3"></a-sphere>
+                    <a-sphere color="#27CEC8" radius="0.3" position="-0.277 0 -1.031" metalness="0.3"></a-sphere>
+                    <a-sphere color="#A15DBD" radius="0.3" position="-1.048 0 0.274" metalness="0.3"></a-sphere>
+                    <a-sphere color="#A15DBD" radius="0.3" position="1.048 0 -0.274" metalness="0.3"></a-sphere>
                   </a-entity>
 
                 </a-entity>
 
                 <a-entity scale="1 1 1" id="xmas-tree-section-5" position="0 0.383 0">
 
-                  <a-cone id="xmas-tree-cone-5" position="0 5.8 0" height="1.44" color="#145A03" radius-bottom="0.78" radius-top="0" ></a-cone>
-                  <a-torus id="tinsel-5" color="#A15DBD" arc="360" radius="0.5" radius-tubular="0.05"  rotation="90 0 0"  position="0 5.638 0"></a-torus>
+                  <a-cone id="xmas-tree-cone-5" position="0 5.8 0" height="1.44" color="#145A03" radius-bottom="0.78" radius-top="0" scale="0.9 0.9 0.9"></a-cone>
+                  <a-torus id="tinsel-5" metalness="0.3" color="#A15DBD" arc="360" radius="0.5" radius-tubular="0.05"  rotation="90 0 0"  position="0 5.638 0"></a-torus>
                   <a-torus id="xmas-snow-5" color="white" arc="360" radius="0.64" radius-tubular="0.10"  rotation="90 0 0"  position="0 5.127 0"></a-torus>
 
                   <a-entity id='baubles-row-5' position="0 5.000 0">
-                    <a-sphere color="#D71257" radius="0.3" position="0.186 0 0.692" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                    <a-sphere color="#D71257" radius="0.3" position="-0.186 0 -0.692" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #27CEC8"></a-sphere>
-                    <a-sphere color="#27CEC8" radius="0.3" position="-0.729 0 0.188" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
-                    <a-sphere color="#27CEC8" radius="0.3" position="0.729 0 -0.188" metalness="0.7" animation="property: color; dir: alternate; dur: 200; easing: easeInExpo; loop: true; to: #D71257"></a-sphere>
+                    <a-sphere color="#A15DBD" radius="0.3" position="0.186 0 0.692" metalness="0.3"></a-sphere>
+                    <a-sphere color="#A15DBD" radius="0.3" position="-0.186 0 -0.692" metalness="0.3"></a-sphere>
+                    <a-sphere color="#27CEC8" radius="0.3" position="-0.729 0 0.188" metalness="0.3"></a-sphere>
+                    <a-sphere color="#27CEC8" radius="0.3" position="0.729 0 -0.188" metalness="0.3"></a-sphere>
                   </a-entity>
 
                 </a-entity>
 
               </a-entity>
 
-              <a-entity id="star"  position="0 8.425 0"  rotation="0 90 0"  scale="0.5 0.5 0.5" rotate="7">
-                <a-cone id="star-middle"   metalness="0.7" position="0 -0.131 0" height="4.3" color="#EAB616" radius-bottom="0.38" radius-top="0"></a-cone>
-                <a-cone id="star-point-bl" metalness="0.7" position="0 -0.92 0.465" rotation="135 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
-                <a-cone id="star-point-br" metalness="0.7" position="0 -0.92 -0.465" rotation="-135 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
-                <a-cone id="star-point-tl" metalness="0.7" position="0 0 -0.465" rotation="-45 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
-                <a-cone id="star-point-tr" metalness="0.7" position="0 0 0.465" rotation="45 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
+              <a-entity id="star"  position="0 8.425 0"  rotation="0 90 0"  scale="0.5 0.5 0.5" rotate="4">
+                <a-cone id="star-middle"   metalness="0.3" position="0 -0.131 0" height="4.3" color="#EAB616" radius-bottom="0.38" radius-top="0"></a-cone>
+                <a-cone id="star-point-bl" metalness="0.3" position="0 -0.92 0.465" rotation="135 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
+                <a-cone id="star-point-br" metalness="0.3" position="0 -0.92 -0.465" rotation="-135 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
+                <a-cone id="star-point-tl" metalness="0.3" position="0 0 -0.465" rotation="-45 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
+                <a-cone id="star-point-tr" metalness="0.3" position="0 0 0.465" rotation="45 0 0"  height="1.5" color="#EAB616" radius-bottom="0.3" radius-top="0"></a-cone>
+
+
+                <a-sphere id="land-1" color="#EAB616" radius="0.4" position="0 -0.495 0" scale="1 1 1" metalness="0.7" ></a-sphere>
               </a-entity>
 
               <a-cylinder id="tree-trunk" position="0 1 0" height="2" color="#883D10" radius="0.6"></a-cylinder>
-              <a-sphere id="land-1" color="white" radius="1" position="0 0.5 0" scale="1 0.780 1"></a-sphere>
+              <a-sphere id="land-1" color="white" radius="1.270" position="0 0.187 0" scale="1 1 0.780"  phi-length="180" rotation="-90 0 0"></a-sphere>
             </a-entity>
 
 
-            <!-- Trees -->
-
+            <!-- Trees
+            <!-- position="-7.500 0 -5.263" -->
             <a-entity id="tree-1" position="-7.500 0 -5.263" scale="0.6 1 0.6" animation__scale="property: scale; dir: alternate; dur: 200;
                              easing: easeInSine; loop: true; to: 0.58 1.02 0.58">
 
               <a-entity id="tree-leaves" position="0 0.7 0">
-                <a-cone id="tree-cone-1" position="0 1.76 0" height="1.36" color="#145A03" radius-bottom="2.89" radius-top="1.03"></a-cone>
-                <a-cone id="tree-cone-2" position="0 2.8 0" height="1.1" color="#145A03" radius-bottom="2" radius-top="0.85"></a-cone>
-                <a-cone id="tree-cone-3" position="0 3.8 0" height="1.1" color="#145A03" radius-bottom="1.5" radius-top="0.5"></a-cone>
-                <a-cone id="tree-cone-4" position="0 4.9 0" height="1.47" color="#145A03" radius-bottom="1.1" radius-top="0"></a-cone>
-                <a-cone id="tree-cone-4" position="0 5.8 0" height="1.44" color="#145A03" radius-bottom="0.78" radius-top="0"></a-cone>
+                <a-cone id="tree-cone-1" position="0 1.76 0" height="0.890" color="#145A03" radius-bottom="2.460" radius-top="1.03"></a-cone>
+                <a-cone id="tree-cone-2" position="0 2.8 0" height="0.840" color="#145A03" radius-bottom="1.540" radius-top="0.85"></a-cone>
+                <a-cone id="tree-cone-3" position="0 3.8 0" height="0.690" color="#145A03" radius-bottom="1.050" radius-top="0.5"></a-cone>
+                <a-cone id="tree-cone-4" position="0 4.9 0" height="0.750" color="#145A03" radius-bottom="0.620" radius-top="0.160"></a-cone>
+                <a-cone id="tree-cone-4" position="0 5.192 0" height="0.220" color="#145A03" radius-bottom="0.780" radius-top="0.560"></a-cone>
 
                 <a-torus id="snow-1" color="white" arc="360" radius="2.8" radius-tubular="0.160"  rotation="90 0 0"  position="0 1.303 0"></a-torus>
                 <a-torus id="snow-2" color="white" arc="360" radius="1.85" radius-tubular="0.160"  rotation="90 0 0"  position="0 2.5 0"></a-torus>
                 <a-torus id="snow-3" color="white" arc="360" radius="1.35" radius-tubular="0.160"  rotation="90 0 0"  position="0 3.5 0"></a-torus>
                 <a-torus id="snow-4" color="white" arc="360" radius="0.95" radius-tubular="0.160"  rotation="90 0 0"  position="0 4.41 0"></a-torus>
                 <a-torus id="snow-5" color="white" arc="360" radius="0.5" radius-tubular="0.160"  rotation="90 0 0"  position="0 5.638 0"></a-torus>
-                <a-cone  id="snow-cone-6" position="0 6.135 0" height="0.76" color="#white" radius-bottom="0.800" radius-top="0.220"></a-cone>
               </a-entity>
 
-              <a-cylinder id="tree-trunk" position="0 1 0" height="2" color="#883D10" radius="0.6"></a-cylinder>
-              <a-sphere id="land-1" color="white" radius="1" position="0 0.5 0" scale="1 0.780 1"></a-sphere>
+              <a-cylinder id="tree-trunk" position="0 1 0" height="1.400" color="#883D10" radius="0.6"></a-cylinder>
             </a-entity>
 
             <a-entity id="tree-2" position="-4.565 0 -7.374" scale="0.6 1.2 0.6" animation__scale="property: scale; dir: alternate; dur: 200;
                              easing: easeInSine; loop: true; to: 0.58 1.22 0.58">
 
               <a-entity id="tree-leaves" position="0 0.7 0">
-                <a-cone id="tree-cone-1" position="0 1.76 0" height="1.36" color="#145A03" radius-bottom="2.89" radius-top="1.03"></a-cone>
-                <a-cone id="tree-cone-2" position="0 2.8 0" height="1.1" color="#145A03" radius-bottom="2" radius-top="0.85"></a-cone>
-                <a-cone id="tree-cone-3" position="0 3.8 0" height="1.1" color="#145A03" radius-bottom="1.5" radius-top="0.5"></a-cone>
-                <a-cone id="tree-cone-4" position="0 4.9 0" height="1.47" color="#145A03" radius-bottom="1.1" radius-top="0"></a-cone>
-                <a-cone id="tree-cone-4" position="0 5.8 0" height="1.44" color="#145A03" radius-bottom="0.78" radius-top="0"></a-cone>
+               <a-cone id="tree-cone-1" position="0 1.76 0" height="0.890" color="#145A03" radius-bottom="2.460" radius-top="1.03"></a-cone>
+               <a-cone id="tree-cone-2" position="0 2.8 0" height="0.840" color="#145A03" radius-bottom="1.540" radius-top="0.85"></a-cone>
+               <a-cone id="tree-cone-3" position="0 3.8 0" height="0.690" color="#145A03" radius-bottom="1.050" radius-top="0.5"></a-cone>
+               <a-cone id="tree-cone-4" position="0 4.9 0" height="0.750" color="#145A03" radius-bottom="0.620" radius-top="0.160"></a-cone>
+               <a-cone id="tree-cone-4" position="0 5.192 0" height="0.220" color="#145A03" radius-bottom="0.780" radius-top="0.560"></a-cone>
 
-                <a-torus id="snow-1" color="white" arc="360" radius="2.8" radius-tubular="0.160"  rotation="90 0 0"  position="0 1.303 0"></a-torus>
-                <a-torus id="snow-2" color="white" arc="360" radius="1.85" radius-tubular="0.160"  rotation="90 0 0"  position="0 2.5 0"></a-torus>
-                <a-torus id="snow-3" color="white" arc="360" radius="1.35" radius-tubular="0.160"  rotation="90 0 0"  position="0 3.5 0"></a-torus>
-                <a-torus id="snow-4" color="white" arc="360" radius="0.95" radius-tubular="0.160"  rotation="90 0 0"  position="0 4.41 0"></a-torus>
-                <a-torus id="snow-5" color="white" arc="360" radius="0.5" radius-tubular="0.160"  rotation="90 0 0"  position="0 5.638 0"></a-torus>
-                <a-cone  id="snow-cone-6" position="0 6.135 0" height="0.76" color="#white" radius-bottom="0.800" radius-top="0.220"></a-cone>
+               <a-torus id="snow-1" color="white" arc="360" radius="2.8" radius-tubular="0.160"  rotation="90 0 0"  position="0 1.303 0"></a-torus>
+               <a-torus id="snow-2" color="white" arc="360" radius="1.85" radius-tubular="0.160"  rotation="90 0 0"  position="0 2.5 0"></a-torus>
+               <a-torus id="snow-3" color="white" arc="360" radius="1.35" radius-tubular="0.160"  rotation="90 0 0"  position="0 3.5 0"></a-torus>
+               <a-torus id="snow-4" color="white" arc="360" radius="0.95" radius-tubular="0.160"  rotation="90 0 0"  position="0 4.41 0"></a-torus>
+               <a-torus id="snow-5" color="white" arc="360" radius="0.5" radius-tubular="0.160"  rotation="90 0 0"  position="0 5.638 0"></a-torus>
               </a-entity>
 
-              <a-cylinder id="tree-trunk" position="0 1 0" height="2" color="#883D10" radius="0.6"></a-cylinder>
-              <a-sphere id="land-1" color="white" radius="1" position="0 0.5 0" scale="1 0.780 1"></a-sphere>
+              <a-cylinder id="tree-trunk" position="0 1 0" height="1.400" color="#883D10" radius="0.6"></a-cylinder>
             </a-entity>
 
             <a-entity id="tree-3" position="-0.965 0 -8.417" scale="0.6 1 0.6" animation__scale="property: scale; dir: alternate; dur: 200;
                              easing: easeInSine; loop: true; to: 0.58 1.02 0.58">
 
               <a-entity id="tree-leaves" position="0 0.7 0">
-                <a-cone id="tree-cone-1" position="0 1.76 0" height="1.36" color="#145A03" radius-bottom="2.89" radius-top="1.03"></a-cone>
-                <a-cone id="tree-cone-2" position="0 2.8 0" height="1.1" color="#145A03" radius-bottom="2" radius-top="0.85"></a-cone>
-                <a-cone id="tree-cone-3" position="0 3.8 0" height="1.1" color="#145A03" radius-bottom="1.5" radius-top="0.5"></a-cone>
-                <a-cone id="tree-cone-4" position="0 4.9 0" height="1.47" color="#145A03" radius-bottom="1.1" radius-top="0"></a-cone>
-                <a-cone id="tree-cone-4" position="0 5.8 0" height="1.44" color="#145A03" radius-bottom="0.78" radius-top="0"></a-cone>
+                <a-cone id="tree-cone-1" position="0 1.76 0" height="0.890" color="#145A03" radius-bottom="2.460" radius-top="1.03"></a-cone>
+                <a-cone id="tree-cone-2" position="0 2.8 0" height="0.840" color="#145A03" radius-bottom="1.540" radius-top="0.85"></a-cone>
+                <a-cone id="tree-cone-3" position="0 3.8 0" height="0.690" color="#145A03" radius-bottom="1.050" radius-top="0.5"></a-cone>
+                <a-cone id="tree-cone-4" position="0 4.9 0" height="0.750" color="#145A03" radius-bottom="0.620" radius-top="0.160"></a-cone>
+                <a-cone id="tree-cone-4" position="0 5.192 0" height="0.220" color="#145A03" radius-bottom="0.780" radius-top="0.560"></a-cone>
 
                 <a-torus id="snow-1" color="white" arc="360" radius="2.8" radius-tubular="0.160"  rotation="90 0 0"  position="0 1.303 0"></a-torus>
                 <a-torus id="snow-2" color="white" arc="360" radius="1.85" radius-tubular="0.160"  rotation="90 0 0"  position="0 2.5 0"></a-torus>
                 <a-torus id="snow-3" color="white" arc="360" radius="1.35" radius-tubular="0.160"  rotation="90 0 0"  position="0 3.5 0"></a-torus>
                 <a-torus id="snow-4" color="white" arc="360" radius="0.95" radius-tubular="0.160"  rotation="90 0 0"  position="0 4.41 0"></a-torus>
                 <a-torus id="snow-5" color="white" arc="360" radius="0.5" radius-tubular="0.160"  rotation="90 0 0"  position="0 5.638 0"></a-torus>
-                <a-cone  id="snow-cone-6" position="0 6.135 0" height="0.76" color="#white" radius-bottom="0.800" radius-top="0.220"></a-cone>
               </a-entity>
 
-              <a-cylinder id="tree-trunk" position="0 1 0" height="2" color="#883D10" radius="0.6"></a-cylinder>
-              <a-sphere id="land-1" color="white" radius="1" position="0 0.5 0" scale="1 0.780 1"></a-sphere>
-            </a-entity>
+              <a-cylinder id="tree-trunk" position="0 1 0" height="1.400" color="#883D10" radius="0.6"></a-cylinder>
+            </a-entity> -->
 
 
             <!-- Penguin -->
-            <a-entity id="penguin-1" position="-6.655 1.760 -0.825" scale="0.4 0.4 0.4" rotation="0 15 0">
+            <a-entity id="penguin-1" position="-6.655 1.694 -0.825" scale="0.5 0.5 0.5" rotation="0 15 0"  animation__scale="property: scale; dir: alternate; dur: 200;
+                             easing: easeInSine; loop: true; to: 0.48 0.51 0.48">
 
-              <a-entity id="penguin-body" position="0 0 0">
+              <a-entity id="penguin-body-1" position="0 0 0">
                 <a-sphere id="penguin-body-1" color="#2E2E2E" radius="1.5" position="0 0 0" scale="1 1.690 1"></a-sphere>
-                <a-sphere id="penguin-body-2" color="white" radius="1.520" position="0 -0.458 0.220" scale="0.910 1.310 1"></a-sphere>
+                <a-sphere id="penguin-body-22" color="white" radius="1.320" position="-0.135 -0.630 1.417" scale="0.760 1 0.610" phi-length="180" rotation="7.420 0 0"></a-sphere>
               </a-entity>
 
-              <a-cone id="penguin-nose" position="0 1.319 1.656" rotation="90 0 0"  height="1" color="#DA6C06" radius-bottom="0.3" radius-top="0"></a-cone>
+              <a-cone id="penguin-nose" position="-0.013 1.319 2.002" rotation="73.990 0 0"  height="1" color="#DA6C06" radius-bottom="0.3" radius-top="0"></a-cone>
               <a-sphere id="penguin-eye" color="#2E2E2E" radius="0.2"  position="-0.521 1.702 1.002"></a-sphere>
               <a-sphere id="penguin-eye" color="#2E2E2E" radius="0.2"  position="0.521 1.702 1.002"></a-sphere>
 
-              <a-sphere id="penguin-wing" color="#2E2E2E" radius="1" position="-1.261 0 0" scale="1 2 0.45"  rotation="25 90 0"></a-sphere>
-              <a-sphere id="penguin-wing" color="#2E2E2E" radius="1" position="1.261 0 0" scale="1 2 0.45"  rotation="-25 90 0"></a-sphere>
+              <a-sphere id="penguin-1-wing" color="#2E2E2E" radius="1" position="-1.261 0 0" scale="1 2 0.45"  rotation="45 90 0"></a-sphere>
+              <a-sphere id="penguin-1-wing" color="#2E2E2E" radius="1" position="1.261 0 0" scale="1 2 0.45"  rotation="-45 90 0"></a-sphere>
 
-              <a-entity id="xmas-hat" position="0 2.513 -0.407" scale="1 1 1" rotation="-20 0 0">
-                <a-cone id="xmas-hat-peak" position="0 0 0" rotation="0 0 0"  height="1.5" color="red" radius-bottom="1.1" radius-top="0"></a-cone>
-                <a-torus id="xmas-hat-ruff" color="white" arc="360" radius="0.9" radius-tubular="0.160"  rotation="90 0 0"  position="0 -0.689 0"></a-torus>
-                <a-sphere id="xmas-hat-bobble" color="white" radius="0.5" position="0 0.819 0"></a-sphere>
+              <a-entity id="xmas-hat" position="-0.066 2.237 -0.203" scale="1.3 1 1.3" rotation="-14.240 0 0">
+                <a-cone id="xmas-hat-peak" position="0 0.491 0" rotation="0 0 0"  height="0.840" color="red" radius-bottom="0.770" radius-top="0.260"></a-cone>
+                <a-torus id="xmas-hat-ruff" color="white" arc="360" scale="0.5 0.5 1.4" radius="1.930" radius-tubular="0.160"  rotation="90 0 0"  position="0 0 0"></a-torus>
+                <a-sphere id="xmas-hat-bobble" color="white" radius="0.5" position="0 1.408 0"></a-sphere>
               </a-entity>
 
-              <a-sphere id="penguin-foot-left" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="-0.632 -2.431 0.616"  rotation="0 -20 0"></a-sphere>
-              <a-sphere id="penguin-foot-right" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="0.632 -2.431 0.616"  rotation="0 20 0"></a-sphere>
-
+              <a-entity position="0 -0.180 0">
+                <a-sphere id="penguin-foot-left" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="-0.632 -2.431 0.616"  rotation="0 -20 0"></a-sphere>
+                <a-sphere id="penguin-foot-right" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="0.632 -2.431 0.616"  rotation="0 20 0"></a-sphere>
+              </a-entity>
             </a-entity>
 
-            <a-entity id="penguin-2" position="-8.299 1.410 -0.036" scale="0.3 0.3 0.3" rotation="0 15 0" animation__scale="property: scale; dir: alternate; dur: 220;
-                             easing: easeInSine; loop: true; to: 0.295 0.31 0.295">
+            <a-entity id="penguin-2" position="-8.582 1.386 0.750" scale="0.4 0.4 0.4" rotation="0 30.000 0" animation__scale="property: scale; dir: alternate; dur: 200;
+                             easing: easeInSine; loop: true; to: 0.38 0.41 0.38">
 
-              <a-entity id="penguin-body" position="0 0 0">
+              <a-entity id="penguin-body-2" position="0 0 0">
                 <a-sphere id="penguin-body-21" color="#2E2E2E" radius="1.5" position="0 0 0" scale="1 1.690 1"></a-sphere>
-                <a-sphere id="penguin-body-22" color="white" radius="1.520" position="0 -0.458 0.220" scale="0.910 1.310 1"></a-sphere>
+                <a-sphere id="penguin-body-22" color="white" radius="1.320" position="-0.135 -0.630 1.417" scale="0.760 1 0.610" phi-length="180" rotation="7.420 0 0"></a-sphere>
               </a-entity>
 
-              <a-cone id="penguin-nose" position="0 1.319 1.656" rotation="90 0 0"  height="1" color="#DA6C06" radius-bottom="0.3" radius-top="0"></a-cone>
+              <a-cone id="penguin-nose" position="-0.013 1.319 2.002" rotation="73.990 0 0"  height="1" color="#DA6C06" radius-bottom="0.3" radius-top="0"></a-cone>
               <a-sphere id="penguin-eye" color="#2E2E2E" radius="0.2"  position="-0.521 1.702 1.002"></a-sphere>
               <a-sphere id="penguin-eye" color="#2E2E2E" radius="0.2"  position="0.521 1.702 1.002"></a-sphere>
 
-              <a-sphere id="penguin-wing" color="#2E2E2E" radius="1" position="-1.261 0 0" scale="1 2 0.45"  rotation="25 90 0"></a-sphere>
-              <a-sphere id="penguin-wing" color="#2E2E2E" radius="1" position="1.261 0 0" scale="1 2 0.45"  rotation="-25 90 0"></a-sphere>
+              <a-sphere id="penguin-2-wing" color="#2E2E2E" radius="1" position="-1.261 0 0" scale="1 2 0.45"  rotation="45 90 0"></a-sphere>
+              <a-sphere id="penguin-2-wing" color="#2E2E2E" radius="1" position="1.261 0 0" scale="1 2 0.45"  rotation="-45 90 0"></a-sphere>
 
-              <a-entity id="xmas-hat" position="0 2.513 -0.407" scale="1 1 1" rotation="-20 0 0">
-                <a-cone id="xmas-hat-peak" position="0 0 0" rotation="0 0 0"  height="1.5" color="red" radius-bottom="1.1" radius-top="0"></a-cone>
-                <a-torus id="xmas-hat-ruff" color="white" arc="360" radius="0.9" radius-tubular="0.160"  rotation="90 0 0"  position="0 -0.689 0"></a-torus>
-                <a-sphere id="xmas-hat-bobble" color="white" radius="0.5" position="0 0.819 0"></a-sphere>
+              <a-entity id="xmas-hat" position="-0.066 2.237 -0.203" scale="1.3 1 1.3" rotation="-14.240 0 0">
+                <a-cone id="xmas-hat-peak" position="0 0.491 0" rotation="0 0 0"  height="0.840" color="red" radius-bottom="0.770" radius-top="0.260"></a-cone>
+                <a-torus id="xmas-hat-ruff" color="white" arc="360" scale="0.5 0.5 1.4" radius="1.930" radius-tubular="0.160"  rotation="90 0 0"  position="0 0 0"></a-torus>
+                <a-sphere id="xmas-hat-bobble" color="white" radius="0.5" position="0 1.408 0"></a-sphere>
               </a-entity>
 
-              <a-sphere id="penguin-foot-left" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="-0.632 -2.431 0.616"  rotation="0 -20 0"></a-sphere>
-              <a-sphere id="penguin-foot-right" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="0.632 -2.431 0.616"  rotation="0 20 0"></a-sphere>
-
+              <a-entity position="0 -0.180 0">
+                <a-sphere id="penguin-foot-left" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="-0.632 -2.431 0.616"  rotation="0 -20 0"></a-sphere>
+                <a-sphere id="penguin-foot-right" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="0.632 -2.431 0.616"  rotation="0 20 0"></a-sphere>
+              </a-entity>
             </a-entity>
 
-            <!-- Signpost -->
-            <a-entity id="sign" position="4.010 0.330 9.154" rotation="0 -65 -6.9" scale="0.7 0.7 0.7">
-              <a-cylinder id="sign-post" position="0 4.25 0" height="8.5" color="#67360E" radius="0.2"></a-cylinder>
+            <!-- <a-entity id="penguin-3" rotate="0" position="4.409 1.622 8.370" scale="0.5 0.5 0.5" rotation="0 -70 0" >
 
-              <a-entity id="signs">
-                <a-box id="sign-merry" position="-1.524 7.130 0" scale="1 1 0.210" rotation="0 0 0" width="3" height="1" src="assets/img/sign-merry.png"></a-box>
-                <a-box id="sign-xmas" position="1.973 6.454 0" scale="1 1 0.210" rotation="0 0 0" width="4" height="1" src="assets/img/sign-xmas.png"></a-box>
-                <a-box id="sign-from" position="-0.982 4.874 0" scale="1 1 0.210" rotation="0 0 0" width="1.83" height="1" src="assets/img/sign-from.png"></a-box>
-                <a-box id="sign-logo" position="1.985 3.802 0" scale="1 1 0.210" rotation="0 0 0" width="4" height="1.73" src="assets/img/sign-logo.png"></a-box>
-              </a-entity>
-              <a-sphere id="sign-snow-1" color="white" radius="0.34" position="0 8.718 0" scale="1 1 1"></a-sphere>
-
-              <a-entity id="sign-snow-1" position="3.944 6.957 0">
-                <a-sphere color="white" radius="0.34" position="0 0 0" scale="1 1 1"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="-0.344 0 0" scale="0.8 0.8 0.8"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="-0.661 0 0" scale="0.7 0.7 0.7"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="0 -0.239 0" scale="0.8 0.8 0.8"></a-sphere>
+              <a-entity id="penguin-body-2" position="0 0 0">
+                <a-sphere id="penguin-body-21" color="#2E2E2E" radius="1.5" position="0 0 0" scale="1 1.690 1"></a-sphere>
+                <a-sphere id="penguin-body-22" color="white" radius="1.320" position="-0.135 -0.630 1.417" scale="0.760 1 0.610" phi-length="180" rotation="7.420 0 0"></a-sphere>
               </a-entity>
 
-              <a-entity id="sign-snow-2" position="3.547 4.724 0"  scale="1.72 1 1">
-                <a-sphere color="white" radius="0.34" position="0 0 0" scale="1 1 1"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="-0.344 0 0" scale="0.8 0.8 0.8"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="-0.661 0 0" scale="0.7 0.7 0.7"></a-sphere>
+              <a-cone id="penguin-nose" position="-0.013 1.319 2.002" rotation="73.990 0 0"  height="1" color="#DA6C06" radius-bottom="0.3" radius-top="0"></a-cone>
+              <a-sphere id="penguin-eye" color="#2E2E2E" radius="0.2"  position="-0.521 1.702 1.002"></a-sphere>
+              <a-sphere id="penguin-eye" color="#2E2E2E" radius="0.2"  position="0.521 1.702 1.002"></a-sphere>
+
+              <a-sphere id="penguin-2-wing" color="#2E2E2E" radius="1" position="-1.261 0 0" scale="1 2 0.45"  rotation="45 90 0"></a-sphere>
+              <a-sphere id="penguin-2-wing" color="#2E2E2E" radius="1" position="1.261 0 0" scale="1 2 0.45"  rotation="-45 90 0"></a-sphere>
+
+              <a-entity id="xmas-hat" position="-0.066 2.237 -0.203" scale="1.3 1 1.3" rotation="-14.240 0 0">
+                <a-cone id="xmas-hat-peak" position="0 0.491 0" rotation="0 0 0"  height="0.840" color="red" radius-bottom="0.770" radius-top="0.260"></a-cone>
+                <a-torus id="xmas-hat-ruff" color="white" arc="360" scale="0.5 0.5 1.4" radius="1.930" radius-tubular="0.160"  rotation="90 0 0"  position="0 0 0"></a-torus>
+                <a-sphere id="xmas-hat-bobble" color="white" radius="0.5" position="0 1.408 0"></a-sphere>
               </a-entity>
 
-              <a-entity id="sign-snow-1" position="-2.919 7.682 0"  rotation="0 180 0">
-                <a-sphere color="white" radius="0.34" position="0 0 0" scale="1 1 1"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="-0.344 0 0" scale="0.8 0.8 0.8"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="-0.661 0 0" scale="0.7 0.7 0.7"></a-sphere>
-                <a-sphere color="white" radius="0.34" position="0 -0.239 0" scale="0.8 0.8 0.8"></a-sphere>
+              <a-entity position="0 -0.180 0">
+                <a-sphere id="penguin-foot-left" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="-0.632 -2.431 0.616"  rotation="0 -20 0"></a-sphere>
+                <a-sphere id="penguin-foot-right" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="0.632 -2.431 0.616"  rotation="0 20 0"></a-sphere>
               </a-entity>
-
-            </a-entity>
-            <!-- -3.809 1.326 5.922 -->
-
-
-            <!-- <a-entity id="xmas-hat" position="0 4 0" scale="1 1 1" >
-              <a-cone id="xmas-hat-peak" position="0 0 0" rotation="0 0 0"  height="1.5" color="red" radius-bottom="0.75" radius-top="0"></a-cone>
-              <a-torus id="xmas-hat-ruff" color="white" arc="360" radius="0.5" radius-tubular="0.160"  rotation="90 0 0"  position="0 -0.689 0"></a-torus>
-              <a-sphere id="xmas-hat-bobble" color="white" radius="0.5" position="0 0.819 0"></a-sphere>
             </a-entity> -->
 
-            <!-- Snowman -->
-            <a-entity id="snow-man" position="-2.846 0.400 -3.518" scale="0.8 0.8 0.8"  rotation="0 0 0" animation__scale="property: scale; dir: alternate; dur: 200;
-                             easing: easeInSine; loop: true; to: 0.78 0.85 0.78">
-              <a-sphere id="snow-man-1" color="white" radius="1.5" position="0 0.8 0"></a-sphere>
-              <a-sphere id="snow-man-2" color="white" radius="1.3" position="0 2.5 0"></a-sphere>
+            <!-- Signpost rot=0 -65 -6.9 -->
+            <a-entity id="sign" position="-3.143 0.590 4.710" rotation="0 -40 0" scale="0.8 0.8 0.8">
 
-              <a-entity rotate="1">
+
+              <a-entity id="the-sign-post">
+                <a-cylinder id="sign-post" position="0 4.25 0" height="8.5" color="#67360E" radius="0.2"></a-cylinder>
+                <a-entity id="signs">
+                  <a-box id="sign-merry" position="-1.698 7.130 0" scale="1 1 0.210" rotation="0 0 0" width="3" height="1" src="assets/img/sign-merry.png"></a-box>
+                  <a-box id="sign-xmas" position="2.552 6.055 0.113" scale="1 1 0.210" rotation="0 0 0" width="4.7" height="1.2" src="assets/img/sign-xmas.png"></a-box>
+                  <a-box id="sign-from" position="-1.117 4.353 0" scale="1 1 0.210" rotation="0 0 0" width="1.83" height="1" src="assets/img/sign-from.png"></a-box>
+                  <a-box id="sign-logo" position="2.189 2.798 0" scale="1 1 0.210" rotation="0 0 0" width="4" height="1.73" src="assets/img/sign-logo.png"></a-box>
+                </a-entity>
+                <a-sphere id="sign-snow-1" color="white" radius="0.34" position="0 8.718 0" scale="1 1 1"></a-sphere>
+
+                <a-entity id="sign-snow-1" position="4.835 6.704 -0.021">
+                  <a-sphere color="white" radius="0.34" position="0 0 0" scale="1 1 1"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="-0.344 0 0" scale="0.8 0.8 0.8"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="-0.661 0 0" scale="0.7 0.7 0.7"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="0 -0.239 0" scale="0.8 0.8 0.8"></a-sphere>
+                </a-entity>
+
+                <a-entity id="sign-snow-2" position="3.979 3.725 0"  scale="1.72 1 1">
+                  <a-sphere color="white" radius="0.34" position="0 0 0" scale="1 1 1"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="-0.344 0 0" scale="0.8 0.8 0.8"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="-0.661 0 0" scale="0.7 0.7 0.7"></a-sphere>
+                </a-entity>
+
+                <a-entity id="sign-snow-3" position="-3.289 7.682 0"  rotation="0 180 0">
+                  <a-sphere color="white" radius="0.34" position="0 0 0" scale="1 1 1"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="-0.344 0 0" scale="0.8 0.8 0.8"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="-0.661 0 0" scale="0.7 0.7 0.7"></a-sphere>
+                  <a-sphere color="white" radius="0.34" position="0 -0.239 0" scale="0.8 0.8 0.8"></a-sphere>
+                </a-entity>
+              </a-entity>
+
+              <a-entity id="rock-formation-2" position="0 0 0" rotation="0 -50 0" scale="1 1 1">
+                <a-entity position="0 0 0" scale="1.5 0.64 1.5">
+                  <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1 1.770"  phi-length="180" rotation="-90 0 0"></a-sphere>
+                  <a-sphere color="white" radius="0.710" position="0 1.281 0" scale="1 1 1" phi-length="180" rotation="-90 0 0"></a-sphere>
+                </a-entity>
+
+                <a-entity position="-0.857 -0.262 0.997" scale='0.5 0.6 0.5'>
+                  <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0.457 0" scale="1 1 1" phi-length="180" rotation="-90 0 0"></a-sphere>
+                  <a-sphere color="white" radius="0.710" position="0 1.311 0" scale="1 1 0.6" phi-length="180" rotation="-90 0 0"></a-sphere>
+                </a-entity>
+
+                <a-entity  position="-1.451 1.504 0.569" rotation="0 25.000 0">
+                  <a-cone position="0 0 0" height="3" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
+                  <a-cone position="-0.154 -0.502 -0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
+                  <a-cone position="0.154 -0.502 0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
+                </a-entity>
+              </a-entity>
+
+            </a-entity>
+
+
+            <!-- Snowman  -->
+            <a-entity id="snow-man" position="-2.922 0.400 -3.837" scale="0.85 0.85 0.85"  rotation="0 0 0" animation__scale="property: scale; dir: alternate; dur: 200; easing: easeInSine; loop: true; to: 0.83 0.87 0.83">
+
+              <a-torus id="snow-man-1" color="white" arc="360"  radius="1.280" radius-tubular="0.120"  position="0 1.147 0" scale="1 1 3.5" rotation="-90.000 0 0"></a-torus>
+
+              <a-sphere id="snow-man-2" color="white" radius="1.220" position="0 1.978 0" scale="1 1 1.510" phi-length="180" rotation="-90 0 0"></a-sphere>
+
+              <a-entity  rotate="1">
                 <a-sphere id="snow-man-3" color="white" radius="1.1" position="0 4 0"></a-sphere>
 
-                <a-entity id="snow-man-hat" position="0 4.9 -0.146" scale="1 1 1" rotation="-10 0 0">
-                  <a-cylinder id="snow-man-hat-1" position="0 0.7 0" height="1.4" color="#2E2E2E" radius="0.6"></a-cylinder>
-                  <a-cylinder id="snow-man-hat-2" position="0 0 0" height="0.2" color="#2E2E2E" radius="1.180"></a-cylinder>
+                <a-entity id="snow-man-hat" position="0 5.129 -0.146" scale="1 1 1" rotation="-10 0 0">
+                  <a-cylinder id="snow-man-hat-1" position="0 0.880 0" height="1.3" color="#2E2E2E" radius="0.6"></a-cylinder>
+                  <a-cylinder id="snow-man-hat-2" position="0 0 0" height="0.300" color="#2E2E2E" radius="1.180"></a-cylinder>
                 </a-entity>
 
                 <a-entity id="snow-man-face" position="0 4 2" scale="1 1 1" rotation="0 0 0">
-                  <a-icosahedron id="snow-man-eye" color="#2E2E2E" radius="0.2"  position="-0.415 0.472 -1.094"></a-icosahedron>
-                  <a-icosahedron id="snow-man-eye" color="#2E2E2E" radius="0.2"  position="0.415 0.472 -1.094"></a-icosahedron>
-                  <a-cone id="snow-man-nose" position="0 0.102 -0.563" rotation="90 0 0"  height="1" color="#DA6C06" radius-bottom="0.3" radius-top="0"></a-cone>
+                  <a-entity id="snow-man-eyes"  position="0 0 0.05">
+                    <a-sphere id="snow-man-eye" color="#2E2E2E" radius="0.2"  position="-0.415 0.472 -1.1" phi-length="180" rotation="-20 -20 0"></a-sphere>
+                    <a-sphere id="snow-man-eye" color="#2E2E2E" radius="0.2"  position="0.415 0.472 -1.1" phi-length="180" rotation="-20 20 0"></a-sphere>
+                  </a-entity>
+                  <a-cone id="snow-man-nose" position="0 0.218 -0.388" rotation="84.560 0 0"  height="1" color="#DA6C06" radius-bottom="0.3" radius-top="0"></a-cone>
                 </a-entity>
               </a-entity>
 
-              <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 2.9 1.197"></a-icosahedron>
-              <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 2.3 1.24"></a-icosahedron>
-              <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 1.6 1.24"></a-icosahedron>
-              <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 1 1.453"></a-icosahedron>
-
-              <a-torus id="snow-man-scarf" color="#D71257" arc="360" radius="1" radius-tubular="0.090"  rotation="90 0 0"  position="0 3.396 0"></a-torus>
-              <a-cylinder id="snow-man-scarf-hang" position="-0.622 2.953 1.061" height="1.20" color="#D71257" radius="0.240" scale="1 1 0.26"  rotation="-20 -30 0"></a-cylinder>
-              <a-cylinder id="snow-man-scarf-hang" position="-1.149 2.474 0.801" height="2" color="#D71257" radius="0.240" scale="1 1 0.26"  rotation="-20 -54 0"></a-cylinder>
-
-              <a-entity id="snow-man-arm-right" position="1.807 3.250 0" scale="1 1 1" rotation="0 0 -65">
-                <a-cylinder id="snow-man-arm-right-1" position="0 0 0" height="2.2" color="#713A07" radius="0.1" scale="1 1 1"  rotation="0 0 0"></a-cylinder>
+              <a-entity id="snow-man-buttons">
+                <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 2.9 1.197"></a-icosahedron>
+                <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 2.3 1.24"></a-icosahedron>
+                <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 1.6 1.529"></a-icosahedron>
+                <a-icosahedron id="snow-man-button-1" color="#2E2E2E" radius="0.2"  position="0 1 1.574"></a-icosahedron>
               </a-entity>
 
-              <a-entity id="snow-man-arm-left" position="-1.807 3.250 0" scale="1 1 1" rotation="0 0 65">
-                <a-cylinder id="snow-man-arm-left-1" position="0 0 0" height="2.2" color="#713A07" radius="0.1" scale="1 1 1"  rotation="0 0 0"></a-cylinder>
+              <a-entity id="snow-man-scarf-cont">
+                <a-torus id="snow-man-scarf" color="#D71257" arc="360" radius="2.360" radius-tubular="0.090"  rotation="90 0 0"  position="0 3.477 0" scale="0.5 0.5 2"></a-torus>
+              </a-entity>
+
+              <a-entity id="snow-man-arms" position="0 -0.165 0">
+                <a-cylinder id="snow-man-arm-right-1" position="1.807 3.250 0" height="1.520" color="#713A07" radius="0.1" scale="1 1 1"  rotation="0 0 -65"></a-cylinder>
+                <a-cylinder id="snow-man-arm-left-1" position="-1.807 3.250 0" height="1.520" color="#713A07" radius="0.1" scale="1 1 1"  rotation="0 0 65"></a-cylinder>
               </a-entity>
 
             </a-entity>
 
-            <a-entity id="skating-section" position="-3.061 0.529 4.562" scale="0.8 0.8 0.8" rotation="2.370 0 1.460">
+            <a-entity id="skating-section" position="-3.061 0.529 4.562" scale="0.8 0.8 0.8" rotation="0 0 0">
 
               <a-entity id="lake" scale="1 1 1" position="0 0.329 0">
-                <a-torus id="lake-wall" color="#F6F8F8" arc="360" radius="6.410" radius-tubular="0.450"  rotation="90 0 0"  position="0 -0.354 0" scale="1 1 1"></a-torus>
-                <a-sphere id="lake-ice" metalness="0.5" color="#A4F7F7" radius="5.8" position="0 0.231 0" scale="1 0.01 1"></a-sphere>
+                <a-torus id="lake-wall" color="#F6F8F8" arc="360" radius="6.080" radius-tubular="0.200"  rotation="90 0 0"  position="0 -0.499 0" scale="1 1 0.5"></a-torus>
+                <a-sphere id="lake-ice" metalness="0.5" color="#A4F7F7" radius="5.7" position="0 -0.488 0" scale="1 0.01 1"></a-sphere>
 
-                <a-sphere id="lake-ice" color="white" radius="0.860" position="6.163 0.337 2.402" scale="1 1 1"></a-sphere>
-                <a-sphere id="lake-ice" color="white" radius="0.810" position="4.948 0.156 4.297" scale="1 1 1"></a-sphere>
+                <a-entity id="pond-rocks" position="0 0 0">
 
-                <a-entity id="rock-snow-1" position="5.562 0.257 3.468">
-                  <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1.770 1"></a-sphere>
-                  <a-sphere color="white" radius="0.710" position="0 1.146 0" scale="1 0.620 1"></a-sphere>
-                </a-entity>
+                  <a-entity id="rock-snow-1" position="5.562 -0.685 3.468">
+                    <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1 1.450" phi-length="180" rotation="-90 0 0"></a-sphere>
+                    <a-sphere color="white" radius="0.710" position="0.017 1.133 0.015" scale="1 1 0.460" phi-length="180" rotation="-90 0 0"></a-sphere>
+                  </a-entity>
 
-                <a-entity id="rock-snow-2" position="4.879 0.257 3.730" scale='0.6 0.6 0.6'>
-                  <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1.770 1"></a-sphere>
-                  <a-sphere color="white" radius="0.710" position="0 1.146 0" scale="1 0.620 1"></a-sphere>
-                </a-entity>
+                  <a-entity id="rock-snow-2" position="4.879 -0.685 3.730" scale='0.6 0.6 0.6'>
+                    <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1 1.770" phi-length="180" rotation="-90 0 0"></a-sphere>
+                    <a-sphere color="white" radius="0.710" position="0 1.296 0" scale="1 1 0.620" phi-length="180" rotation="-90 0 0"></a-sphere>
+                  </a-entity>
 
-                <a-entity id="rock-snow-3" position="5.091 -0.120 2.585" scale="1.5 0.5 1.5">
-                  <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1.770 1"></a-sphere>
-                  <a-sphere color="white" radius="0.710" position="0 1.146 0" scale="1 0.620 1"></a-sphere>
-                </a-entity>
+                  <a-entity id="rock-snow-3" position="5.091 -0.475 2.585" scale="1.5 0.260 1.5">
+                    <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1 1.770" phi-length="180" rotation="-90 0 0"></a-sphere>
+                    <a-sphere color="white" radius="0.710" position="0 1.413 0" scale="1 1 0.620" phi-length="180" rotation="-90 0 0"></a-sphere>
+                  </a-entity>
 
-                <a-entity id="grass-1">
-                  <a-cone position="3.987 1.483 3.795" height="3" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
-                  <a-cone position="4.120 0.877 3.637" height="2" color="#145A03" radius-bottom="0.130" radius-top="0" rotation="-6.850 0 -6.520"></a-cone>
-                  <a-cone position="3.850 0.967 3.959" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
+                  <a-entity id="grass-1" position="0 -0.381 0">
+                    <a-cone position="3.987 1.483 3.795" height="3" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
+                    <a-cone position="4.120 0.877 3.637" height="2" color="#145A03" radius-bottom="0.130" radius-top="0" rotation="-6.850 0 -6.520"></a-cone>
+                    <a-cone position="3.850 0.967 3.959" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
+                  </a-entity>
                 </a-entity>
 
               </a-entity>
 
-              <a-entity id="penguin-motion" position="0 1 0" scale="1 1 1" rotate="-3" >
+              <a-entity id="penguin-motion" position="0 0.606 0" scale="1 1 1" rotate="-3" >
                 <a-entity id="penguin" position="0 0 -3" scale="0.5 0.5 0.5" >
                   <a-entity id="penguin-body" position="0 0 0"  rotation="90 90 0">
                     <a-sphere id="penguin-body-1" color="#2E2E2E" radius="1.5" position="0 0 0" scale="1 1.690 1"></a-sphere>
-                    <!-- <a-sphere id="penguin-body-2" color="white" radius="1.520" position="0 -0.458 0.220" scale="0.910 1.310 1"></a-sphere> -->
 
                     <a-sphere id="penguin-wing" color="#2E2E2E" radius="1" position="-1.261 0 0" scale="1 2 0.45"  rotation="25 90 0"></a-sphere>
                     <a-sphere id="penguin-wing" color="#2E2E2E" radius="1" position="1.261 0 -0.840" scale="1 2 0.45"  rotation="-25 90 45"></a-sphere>
@@ -491,13 +543,13 @@
                     <a-sphere id="penguin-eye" color="#2E2E2E" radius="0.2"  position="0.521 1.702 1.002"></a-sphere>
                   </a-entity>
 
-                  <a-entity id="xmas-hat" position="1.523 1.655 0" scale="0.7 0.7 0.7" rotation="0 0 -20">
-                    <a-cone id="xmas-hat-peak" position="0 0 0" rotation="0 0 0"  height="1.5" color="red" radius-bottom="1.1" radius-top="0"></a-cone>
+                  <a-entity id="xmas-hat" position="1.523 1.943 0" scale="0.7 0.7 0.7" rotation="0 0 -20">
+                    <a-cone id="xmas-hat-peak" position="0 0 0" rotation="0 0 0"  height="1.5" color="red" radius-bottom="0.660" radius-top="0"></a-cone>
                     <a-torus id="xmas-hat-ruff" color="white" arc="360" radius="0.9" radius-tubular="0.160"  rotation="90 0 0"  position="0 -0.689 0"></a-torus>
                     <a-sphere id="xmas-hat-bobble" color="white" radius="0.5" position="0 0.819 0"></a-sphere>
                   </a-entity>
 
-                  <a-entity id="penguin-feet" position="0 0 0"  rotation="90 90 0">
+                  <a-entity id="penguin-feet" position="0 0.440 0"  rotation="90 90 0">
                     <a-sphere id="penguin-foot-left" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="-0.632 -2.431 0.093"  rotation="20 -20 0"></a-sphere>
                     <a-sphere id="penguin-foot-right" color="#E7B4CD" radius="0.55"  scale="1.000 0.49 2.04" position="0.632 -2.431 -0.543"  rotation="40 20 -20"></a-sphere>
                   </a-entity>
@@ -506,69 +558,50 @@
 
             </a-entity>
 
-            <a-entity id="rock-formation-1" position="-9.206 0.491 -2.546">
+            <!-- Landscape -->
+
+            <a-entity id="rock-formation-1" position="-9.206 0.3 -2.546">
               <a-entity position="0 0 0" scale="1.5 0.64 1.5">
-                <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1.770 1"></a-sphere>
-                <a-sphere color="white" radius="0.710" position="0 1.146 0" scale="1 0.620 1"></a-sphere>
+                <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1 1.770"  phi-length="180" rotation="-90 0 0"></a-sphere>
+                <a-sphere color="white" radius="0.710" position="0 1.281 0" scale="1 1 1" phi-length="180" rotation="-90 0 0"></a-sphere>
               </a-entity>
 
               <a-entity position="-0.857 -0.262 0.997" scale='0.5 0.6 0.5'>
-                <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1.770 1"></a-sphere>
-                <a-sphere color="white" radius="0.710" position="0 1.146 0" scale="1 0.620 1"></a-sphere>
+                <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0.457 0" scale="1 1 1" phi-length="180" rotation="-90 0 0"></a-sphere>
+                <a-sphere color="white" radius="0.710" position="0 1.311 0" scale="1 1 0.6" phi-length="180" rotation="-90 0 0"></a-sphere>
               </a-entity>
 
-              <a-entity position="-1.451 0.801 0.569" rotation="0 25.000 0">
+              <a-entity  position="-1.451 1.504 0.569" rotation="0 25.000 0">
                 <a-cone position="0 0 0" height="3" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
                 <a-cone position="-0.154 -0.502 -0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
                 <a-cone position="0.154 -0.502 0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
               </a-entity>
             </a-entity>
 
-            <a-entity id="rock-formation-2" position="4.110 0.467 9.107" rotation="0 -50 0" scale="0.7 0.7 0.7">
-              <a-entity position="0 0 0" scale="1.5 0.64 1.5">
-                <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1.770 1"></a-sphere>
-                <a-sphere color="white" radius="0.710" position="0 1.146 0" scale="1 0.620 1"></a-sphere>
-              </a-entity>
-
-              <a-entity position="-0.857 -0.262 0.997" scale='0.5 0.6 0.5'>
-                <a-sphere color="#A8ADAD" roughness="1" radius="0.880" position="0 0 0" scale="1 1.770 1"></a-sphere>
-                <a-sphere color="white" radius="0.710" position="0 1.146 0" scale="1 0.620 1"></a-sphere>
-              </a-entity>
-
-              <a-entity  position="-1.451 0.801 0.569" rotation="0 25.000 0">
-                <a-cone position="0 0 0" height="3" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
-                <a-cone position="-0.154 -0.502 -0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
-                <a-cone position="0.154 -0.502 0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
-              </a-entity>
-            </a-entity>
-
-            <a-entity id="grass-1" position="-2.182 1.741 0.448" rotation="0 25.000 0">
+            <a-entity id="grass-1" position="-2.182 1.919 0.448" rotation="0 25.000 0">
               <a-cone position="0 0 0" height="3" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
               <a-cone position="-0.154 -0.502 -0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
               <a-cone position="0.154 -0.502 0.129" height="2" color="#145A03" radius-bottom="0.130" radius-top="0"></a-cone>
             </a-entity>
 
-            <a-entity position="0 0 0" rotation="0 0 0">
-              <a-light id="ligh-red" color="#ff0500" position="-20.338 10.172 -1.126" rotation="0 0 0" angle="0.000"></a-light>
-              <a-light id="ligh-white"color="white" position="-10.832 17.093 19.742"  rotation="0 0 0"angle="0.000" intensity="1"></a-light>
-              <a-light id="ligh-blue" color="#4f73ff" position="18.151 6.160 -9.895" rotation="0 0 0" angle="0.000" intensity="1.500"></a-light>
 
-              <a-sphere color="#ff0500" radius="1" position="-20.338 10.172 -1.126"></a-sphere>
-              <a-sphere color="#4f73ff" radius="1" position="18.151 6.160 -9.895"></a-sphere>
-              <a-sphere color="#FFF" radius="1" position="-10.832 17.093 19.742"></a-sphere>
+            <!-- Lights -->
+            <a-entity position="0 0 0" rotation="0 0 0">
+              <a-light id="ligh-red" color="#A15DBD" position="-20.338 10.172 -1.126" rotation="0 0 0" angle="0.000"></a-light>
+              <a-light id="ligh-white"color="white" position="-10.832 17.093 19.742"  rotation="0 0 0"angle="0.000" intensity="0.8" ></a-light>
+              <a-light id="ligh-blue" color="#27CEC8" position="18.151 6.160 -9.895" rotation="0 0 0" angle="0.000" intensity="1.500" ></a-light>
             </a-entity>
 
 
-            <a-sky  color="#2E2E2E" src="assets/img/sky.jpg"></a-sky>
+            <!-- <a-sky  color="#2E2E2E" src="assets/img/sky.jpg"></a-sky> -->
 
-            <a-sphere id="floor" roughness="1" color="white" radius="12"  position="0 -0.017 0"  scale="1 0.08 1"></a-sphere>
+            <a-cylinder id="floor" roughness="1" radius="12"  position="0 0.1 0" height="0.2" scale="1 1 1"  src="assets/img/snow.jpg"></a-cylinder>
 
           </a-entity>
           <!-- End of xmas scene -->
 
-        <!-- </a-marker> -->
-
       </a-scene>
 
   </body>
+
 </html>
