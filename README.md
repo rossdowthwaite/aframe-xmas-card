@@ -1,5 +1,7 @@
 ### Merry ChristmARs!!!
 
+![screenshot](https://github.com/rossdowthwaite/aframe-xmas-card/blob/master/screenshot.png?raw=true)
+
 [Merry christmas, everyone :)](https://merry-xmas.netlify.com/)
 
 ## How to use
@@ -15,7 +17,7 @@ npm install
 * AR.js
 
 ## Contributors
-### Devlopment
+### Development
 
 * Ross Dowthwaite
 
